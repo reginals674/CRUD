@@ -1,10 +1,15 @@
 
-import java.awt.Menu;
+
+
 
 public class CPrueba extends CMenu{
     public static void main(String[] args)throws Exception {
         CLista productos = new CLista();
 
+        CNodo n1 = new CNodo(111, "Estufa", 10050, 12);
+        productos.insertar(n1);
+        CNodo n2 = new CNodo(115, "Reloj ", 2000, 5);
+        productos.insertar(n2);
         
         int opcion;
         CNodo nodoA;
@@ -19,8 +24,15 @@ public class CPrueba extends CMenu{
                     break;
                 case 2:
                     System.out.println("Eliminar productos");
-                    int clave = eliminarProducto(); 
-                    productos.eliminar(clave);
+
+                    if (productos.tamanio == 0){
+                        System.out.println("Lista vacia, no se puede eliminar un elemento");
+                        
+                    }else{
+                        int clave = eliminarProducto(); 
+                        productos.eliminar(clave);
+                    }
+                    
                     break;
                 case 3:
                     System.out.println("Actualizar productos");

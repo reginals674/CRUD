@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class CMenu{
+    
 
     public static int menuPrincipal() throws Exception {
         int opcion;

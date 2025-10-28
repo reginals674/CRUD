@@ -40,21 +40,24 @@ public class CLista {
         tamanio++;
     }  
 
-    void eliminar(int clave){
-        
-        if( tamanio == 0){
-            System.out.println("Lista vacia, no se puede eliminar un elemento");
-        }
-
+    void eliminar(int clave) {
+       
+        if (tamanio != 0){
         // eliminar al inicio
         if (inicio.clave == clave){
-            inicio = inicio.sig;
+
+            if (inicio.sig == null){
+                inicio= null;
+            }
+            else{
+                inicio = inicio.sig;
+            }
             if (inicio == null) {
                 fin = null;
             }
             tamanio--;
             System.out.println("Elemento |" + clave + "| eliminado");
-        }
+        }else{
 
         // buscar en el resto de la lista
         CNodo anterior = inicio;
@@ -75,5 +78,8 @@ public class CLista {
         } else {
             System.out.println("Elemento no encontrado");
         }
-    }  
+        }
+    }  }
 }
+
+
